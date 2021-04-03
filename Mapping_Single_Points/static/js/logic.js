@@ -2,21 +2,31 @@
 console.log("working");
 
 // Create the map object with a center and zoom level.
-// mapid refers to the id tag in our <div> on the index.html file.
-// setView() method sets the view of the map with a geographical center
-// First coordinate is latitude (40.7) then longitude (-94.5)
-// set the zoom level of "4" on a scale 0–18.
-let map = L.map('mapid').setView([40.7, -94.5], 4);
+// Prior instructions under the Simple_Map logic.js file version
+// set the zoom level of "14" on a scale 0–18.
+let map = L.map('mapid').setView([34.0522, -118.2437], 14);
+
+//  Add a marker to the map for Los Angeles, California.
+// let marker = L.marker([34.0522, -118.2437]).addTo(map);
+// change the marker to a circle ()
+// radious to 300 and color of the cicle to yellow
+// let marker = L.circle([34.0522, -118.2437], {
+    //color: "yellow",
+    //radius: 300
+ //}).addTo(map);
+// use circleMarker() function - it measures the radius of the circle in pixels
+// with the default radius set at 10 pixels. 
+let marker = L.circleMarker([34.0522, -118.2437], {
+    color: "black",
+    fillColor: "#ffffa1",
+    radius: 300
+ }).addTo(map);
+
 
 // create the tile layer that will be the background of the map.
-// streets is the variable and tileLayer the method including API urls
-// add the maxZoom attribute and assign it a value of 18
-// add the id attribute and assign it mapbox.streets, to show the streets on the map.
-// (if want to change to other maps styles change the id i.e mapbox.stellite instead of streets)
-// add the accessToken attribute and assign it the value of our API_KEY.
-// (original) let streets = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-// other Maxbox styles urls can be found at docs.mapbox.com/api/maps/styles/ i.e instead of street-v11 use satellite-v9
-let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+// Detailed notes about prior steps on under the Simple_Map logic.js version
+// mode was changed to dark /dark-v10 instead of /streets-v11
+let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'mapbox.streets',
