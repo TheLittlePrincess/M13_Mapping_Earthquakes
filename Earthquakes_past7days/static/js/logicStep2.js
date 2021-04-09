@@ -20,8 +20,8 @@ attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap
 // Create a base layer that holds both maps.
 // light and Dark or streets and stalite can be used to toggle between styles in the index.html
 let baseMaps = {
-  Streets: streets,
-  Satalite: sataliteStreets
+  "Streets": streets,
+  "Satalite": sataliteStreets
 };
 // Create the map object with center, zoom level and default layer.
 let map = L.map('mapid', {
